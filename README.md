@@ -1,4 +1,4 @@
-Java-Fundamentals
+## Java-Fundamentals
 This repo will include 10 day of class labs.
 
 Basics-Main.java
@@ -7,6 +7,8 @@ Basics-Main.java
 - Clock function
 
 
-Reference 
+## Resources
+classmate: Nhu Trinh
+TA: David Franklin
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
