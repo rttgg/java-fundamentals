@@ -4,11 +4,40 @@
 package basiclibrary;
 
 import org.junit.Test;
+
+import java.util.Arrays;
+
+import static basiclibrary.Library.containsDuplicates;
 import static org.junit.Assert.*;
 
 public class LibraryTest {
-    @Test public void testSomeLibraryMethod() {
-        Library classUnderTest = new Library();
-        assertTrue("someLibraryMethod should return 'true'", classUnderTest.someLibraryMethod());
+
+    @Test public void testContainsDuplicate() {
+        int[] testArray = new int[]{1,2,3,4,4};
+        assertTrue("someLibraryMethod should return 'true'", containsDuplicates(testArray));
+    }
+    @Test public void testContainsDuplicate_arrayNotDuplicate() {
+        int[] testArray = new int[]{1,2,3,4};
+        assertTrue("someLibraryMethod should return 'true'", containsDuplicates(testArray));
+    }
+
+    @Test public void testCalculateAvg() {
+        int[] testArray = new int[]{1,2,3,4,5};
+        double avg = Library.calculateAvg(testArray);
+        assertTrue("Avg is:", avg == 3);
+    }
+
+
+
+    @Test public void testArrayAvgValue() {
+        int[][] weeklyMonthTemperatures = {
+                {66, 64, 58, 65, 71, 57, 60},
+                {57, 65, 65, 70, 72, 65, 51},
+                {55, 54, 60, 53, 59, 57, 61},
+                {65, 56, 55, 52, 55, 62, 57}
+        };
+        String test = Arrays.toString(weeklyMonthTemperatures[2]);
+        String result = Library.arrayAvgValue(weeklyMonthTemperatures);
+        assertEquals(test, result);
     }
 }
