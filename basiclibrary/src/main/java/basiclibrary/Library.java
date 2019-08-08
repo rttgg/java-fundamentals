@@ -3,12 +3,13 @@
  */
     package basiclibrary;
 
+import org.checkerframework.checker.units.qual.min;
+
 import javax.swing.*;
 import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.*;
 
-public class Library {
+public class Library<myans, max> {
 
     public static void main(String[] args) {
         int[] myRoll = roll(6);
@@ -45,7 +46,6 @@ public class Library {
         return avg/cal.length;
     }
 
-
     public static String arrayAvgValue(int[][] lowestArray){
         ArrayList<Integer> averages = new ArrayList<>();
         int lowestAvg = Integer.MAX_VALUE;
@@ -69,7 +69,39 @@ public class Library {
         return Arrays.toString(lowestArray[lowestAvgIndex]);
     }
 
-    }
+
+
+        public static String valueMinMax (int[][] myData) {
+            String myans = "";
+            int min = myData[0][0];
+            int max = myData[0][0];
+            HashSet<Integer> set = new HashSet<>();
+            for (int i = 0; i < myData.length; i++) {
+                for (int j = 0; j < myData[i].length; j++) {
+                    if ((myData[i][j]) < min) {
+                        min = myData[i][j];
+                    }
+                    if ((myData[i][j]) > max) {
+                        max = myData[i][j];
+                        set.add(myData[i][j]);
+                    }
+                }
+            }
+            for (int i = min; i <= max; i++) {
+                if (!set.contains(i)) {
+                    myans += " Never saw temperature: " + i;
+                }
+            }
+            return myans;
+        }
+
+
+
+
+
+
+
+}
 
 
 

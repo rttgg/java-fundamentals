@@ -1,5 +1,7 @@
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+
+
 public class Main {
 
   //creating pluralize function
@@ -7,8 +9,9 @@ public class Main {
     
     if(num >=2){
       return word + "s";
-    }
+    } else {
     return word;
+    }
   }
 
    // function flipNHeads that accepts an integer n
@@ -20,12 +23,17 @@ public class Main {
   // print it took flips flips to flip N heads in a row
 
   // creating flipNHeads function
+  // flip until happy
+  // count heads in a row
+  // if tails, count is zero
+  // once you have enough in a row, flip head
   public static String flipNHeads (int n){
     int flips = 0;
     int heads = 0;
   
 
     while (flips < n) {
+      // flip the coin!
       double currentFlip = Math.random();
       flips++;
       if (currentFlip <= 0.5){
@@ -38,6 +46,7 @@ public class Main {
     
     }
     return "It took " + flips + " flip " + heads + " in a row";
+  
   } 
 
   // write a method clock-java's build-in LocalDateTime ==that constatly print out current time to the console second by second. 
